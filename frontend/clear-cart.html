@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cart Data</title>
+</head>
+<body>
+    <h1>Clear Cart Data</h1>
+    <button onclick="clearCart()">Clear Cart</button>
+    <div id="result"></div>
+    
+    <script>
+        function clearCart() {
+            localStorage.removeItem('timray-cart');
+            document.getElementById('result').innerHTML = '<p style="color: green;">Cart cleared successfully!</p>';
+        }
+        
+        // Show current cart data
+        const cartData = localStorage.getItem('timray-cart');
+        if (cartData) {
+            console.log('Current cart data:', JSON.parse(cartData));
+        }
+    </script>
+</body>
+</html>
